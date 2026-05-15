@@ -1,0 +1,17 @@
+target/
+node_modules/
+dist/
+.env
+*.zkey
+*.ptau
+*.r1cs
+*.wasm
+*.sym
+*.wtns
+*.json
+!package.json
+!tsconfig.json
+!deployments.json
+build/
+.DS_Store
+Cargo.lock

@@ -1,0 +1,14 @@
+{
+  "testnet": {
+    "ct20":         null,
+    "viewing_keys": null,
+    "swap":         null,
+    "governance":   null
+  },
+  "mainnet": {
+    "ct20":         null,
+    "viewing_keys": null,
+    "swap":         null,
+    "governance":   null
+  }
+}

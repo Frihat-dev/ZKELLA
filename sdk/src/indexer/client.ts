@@ -50,6 +50,17 @@ export class IndexerClient {
     return data.spent
   }
 
+  /**
+   * Look up the leaf index for a specific commitment hash.
+   * Race-free alternative to reading leafCount - 1 after submission,
+   * since a commitment uniquely identifies exactly one leaf.
+   */
+  async getLeafByCommitment(commitmentHex: string): Promise<{ leafIndex: number }> {
+    const res = await fetch(`${this.baseUrl}/commitment/${commitmentHex}`)
+    if (!res.ok) throw new Error(`indexer error: ${res.status}`)
+    return res.json()
+  }
+
   async health(): Promise<{ syncedLedger: number; tipLedger: number; lag: number }> {
     const res = await fetch(`${this.baseUrl}/health`)
     if (!res.ok) throw new Error(`indexer error: ${res.status}`)
